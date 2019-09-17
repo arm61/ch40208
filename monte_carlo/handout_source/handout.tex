@@ -1,0 +1,85 @@
+\documentclass[a4paper]{article}
+\usepackage{titling}
+\usepackage{authblk}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{rsc}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{mhchem}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\DeclareSIUnit\Fahrenheit{\degree F}
+
+\title{Exercise: Monte Carlo Methods in Action}
+\author[1]{Dr Benjamin J. Morgan}
+\author[1,2]{Dr Andrew R. McCluskey}
+\affil[1]{Department of Chemistry, University of Bath, email: b.j.morgan@bath.ac.uk}
+\affil[2]{Diamond Light Source, email: andrew.mccluskey@diamond.ac.uk}
+\setcounter{Maxaffil}{0}
+\renewcommand\Affilfont{\itshape\small}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{CH40208}
+\lhead{\thetitle}
+\rfoot{\thepage}
+
+\begin{document}
+\maketitle
+
+\section*{Aim}
+
+In this exercise, you will develop Monte Carlo code for sampling the potential energy landspace of bonds stretchs and angle bends in a \ce{H_2O} molecule.
+
+\section{Monte-Carlo sampling}
+
+Monte-Carlo is a method for the sampling of some probability distribution.
+We will introduce this sampling method by considering a group of children playing a game where they first draw a large circle and then a square around it, where the diameter of the circle ($d$) is equal to the length of the side of the square ($a$) on a beach (similar to that shown in Figure~\ref{fig:cir}).
+The children then take turns randomly throwing pebbles into the square (with obviously some landing in the circle), with each throw counting as a \emph{trial} and each that lands inside the circle as a \emph{hit}.
+%
+\begin{figure}[t]
+\centering
+%\includegraphics{beach}
+\label{fig:cir}
+\caption{The pattern drawn on the beach.}
+\end{figure}
+%
+
+The trials are technically sampling the area of the square ($A_s$), while the hits sample the area of the circle ($A_c$).
+Therefore, the ratio of the number of hits ($N_{\text{hits}}$) to the number of trails ($N_{\text{trials}}$) is equal to the ratio of the area of the circle to the square,
+%
+\begin{equation}
+  \frac{N_{\text{hits}}}{N_{\text{trials}}} = \frac{A_c}{A_s} = \frac{\pi(d/2)^2}{a^2} = \frac{\pi}{4}\text{, where }d=a.
+\end{equation}
+
+\section{Classical modelling}
+
+\section{Potential energy landspace}
+
+
+\bibliographystyle{rsc}
+\bibliography{handout}
+
+\end{document}
