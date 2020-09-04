@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Collection &#8212; CH40208: Topics in Computational Chemistry</title>
+    <title>Collections &#8212; CH40208: Topics in Computational Chemistry</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -107,7 +107,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Collection
+     Collections
     </a>
    </li>
   </ul>
@@ -249,15 +249,15 @@
         
               <div>
                 
-  <div class="section" id="collection">
-<h1>Collection<a class="headerlink" href="#collection" title="Permalink to this headline">¶</a></h1>
-<p>At the beginning of this section we introduced the <a class="reference internal" href="variable_types.html"><span class="doc std std-doc">variable types</span></a> that are present in Python.
+  <div class="section" id="collections">
+<h1>Collections<a class="headerlink" href="#collections" title="Permalink to this headline">¶</a></h1>
+<p>At the beginning of this section, we introduced the <a class="reference internal" href="variable_types.html"><span class="doc std std-doc">variable types</span></a> that are present in Python.
 However, we only showed types that exist <em>individually</em>, e.g. one float or a single string, but Python can go beyond individual items and natively has objects that can hold <em>collections</em> of variables.
 In this section, we will look in detail at three different types of collections in Python, namely:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="#lists">Lists</a></p></li>
 <li><p><a class="reference external" href="#tuples">Tuples</a></p></li>
-<li><p><a class="reference external" href="#dict">Dictionaries</a></p></li>
+<li><p><a class="reference external" href="#dictionaries">Dictionaries</a></p></li>
 </ul>
 <p>Similarly to the individual object types, different operations can be performed on each of these collection types.</p>
 <div class="section" id="lists">
@@ -271,7 +271,7 @@ Let’s see how we can go about creating a Python list,</p>
 </div>
 </div>
 </div>
-<p>A <code class="docutils literal notranslate"><span class="pre">list</span></code> is created by putting multiple objects between square brackets seperated by commas.
+<p>A <code class="docutils literal notranslate"><span class="pre">list</span></code> is created by putting multiple objects between square brackets separated by commas.
 We can confirm this has created a list using the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -285,7 +285,7 @@ We can confirm this has created a list using the <code class="docutils literal n
 </div>
 </div>
 </div>
-<p>Additionally, the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function is able to handle printing a list,</p>
+<p>Additionally, the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function can handle printing a list,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">noble_gases</span><span class="p">)</span>
@@ -361,7 +361,7 @@ So <span class="math notranslate nohighlight">\(-1\)</span> is the final element
 </div>
 </div>
 </div>
-<p>We can concatenate two lists, for example say we have a few more gases to add to our <code class="docutils literal notranslate"><span class="pre">noble_gases</span></code> list,</p>
+<p>We can concatenate two lists, for example, say we have a few more gases to add to our <code class="docutils literal notranslate"><span class="pre">noble_gases</span></code> list,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noble_gases</span> <span class="o">=</span> <span class="n">noble_gases</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Krypton&#39;</span><span class="p">,</span> <span class="s1">&#39;Xenon&#39;</span><span class="p">]</span>
@@ -415,12 +415,12 @@ So <span class="math notranslate nohighlight">\(-1\)</span> is the final element
 </div>
 </div>
 <p>The slicing notation can be a bit confusing, it is inclusive then exclusive.
-The slice of the list <em>includes</em> the item with the index that preceeds the colon, and <em>excludes</em> that which follows the colon.
+The slice of the list <em>includes</em> the item with the index that precedes the colon and <em>excludes</em> that which follows the colon.
 In the code about, we can see that the item with index <span class="math notranslate nohighlight">\(1\)</span> is included, but that with index <span class="math notranslate nohighlight">\(4\)</span> is excluded.
-<code class="xref std std-numref docutils literal notranslate"><span class="pre">list_slice</span></code> shows slicing graphically.</p>
-<div class="figure align-default" id="list-slicing">
+<a class="reference internal" href="#list-slice"><span class="std std-numref">Fig. 3</span></a> shows slicing graphically.</p>
+<div class="figure align-default" id="list-slice">
 <a class="reference internal image-reference" href="../_images/list_slicing.png"><img alt="A graphical description of list slicing, where the positive indexing is shown above the element name for the first three noble gases and the negative indexing is below. The slice from 1 to 4 is idenfied." src="../_images/list_slicing.png" style="width: 495.0px; height: 180.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">A graphical description of slicing for lists.</span><a class="headerlink" href="#list-slicing" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">A graphical description of slicing for lists.</span><a class="headerlink" href="#list-slice" title="Permalink to this image">¶</a></p>
 </div>
 <p>We can also <em>skip</em> elements from a list slice, using a second colon.</p>
 <div class="cell docutils container">
@@ -438,7 +438,7 @@ In the code about, we can see that the item with index <span class="math notrans
 <p>Notice that by omitting the second index (between the two colons), implicitly we have said to run to the end of the list (index <code class="docutils literal notranslate"><span class="pre">-1</span></code>).
 The same can be done for the first index, and the start of the list (index <code class="docutils literal notranslate"><span class="pre">0</span></code>) will be used.</p>
 <p>Finally, a list does <em>not</em> need to made up of items of a consistent type.
-The above examples have focused on a list containing all strings, however the list is able to handle disparate types of information.
+The above examples have focused on a list containing all strings, however, the list can handle disparate types of information.
 For example, below we have a list that contains a string, integer, and a float,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
