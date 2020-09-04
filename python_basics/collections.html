@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Collections &#8212; CH40208: Topics in Computational Chemistry</title>
+    <title>Collection &#8212; CH40208: Topics in Computational Chemistry</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -107,7 +107,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Collections
+     Collection
     </a>
    </li>
   </ul>
@@ -184,9 +184,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/python_basics/collections.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/python_basics/collections.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -203,6 +203,28 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/python_basics/collections.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/python_basics/collections.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -211,7 +233,16 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-name-lists-a-lists">
+   <a name="lists">
+   </a>
+   Lists
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -220,8 +251,217 @@
         
               <div>
                 
-  <div class="section" id="collections">
-<h1>Collections<a class="headerlink" href="#collections" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="collection">
+<h1>Collection<a class="headerlink" href="#collection" title="Permalink to this headline">¶</a></h1>
+<p>At the beginning of this section we introduced the <a class="reference internal" href="variable_types.html"><span class="doc std std-doc">variable types</span></a> that are present in Python.
+However, we only showed types that exist <em>individually</em>, e.g. one float or a single string, but Python can go beyond individual items and natively has objects that can hold <em>collections</em> of variables.
+In this section, we will look in detail at three different types of collections in Python, namely:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#lists">Lists</a></p></li>
+<li><p><a class="reference external" href="#tuples">Tuples</a></p></li>
+<li><p><a class="reference external" href="#dict">Dictionaries</a></p></li>
+</ul>
+<p>Similarly to the individual object types, different operations can be performed on each of these collection types.</p>
+<div class="section" id="a-name-lists-a-lists">
+<h2><a name="lists"></a>Lists<a class="headerlink" href="#a-name-lists-a-lists" title="Permalink to this headline">¶</a></h2>
+<p>Starting with <code class="docutils literal notranslate"><span class="pre">list</span></code>-type collection objects.
+Let’s see how we can go about creating a Python list,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noble_gases</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;helium&#39;</span><span class="p">,</span> <span class="s1">&#39;Neon&#39;</span><span class="p">,</span> <span class="s1">&#39;Argon&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">list</span></code> is created by putting multiple objects between square brackets seperated by commas.
+We can confirm this has created a list using the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">noble_gases</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<p>Additionally, the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function is able to handle printing a list,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">noble_gases</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;helium&#39;, &#39;Neon&#39;, &#39;Argon&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we want to access one of the items within a list, then we make use of the <em>index</em> notation.
+One of the strange things to note about this notation is that is it starts counting from <span class="math notranslate nohighlight">\(0\)</span>, so the first item of the list is found with,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noble_gases</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;helium&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference internal" href="#list-indexing"><span class="std std-numref">Fig. 2</span></a> shows graphically how the indexing of lists can be considered in Python.</p>
+<div class="figure align-default" id="list-indexing">
+<a class="reference internal image-reference" href="../_images/list_indexing.png"><img alt="A graphical description of a list, where the positive indexing is shown above the element name for the first three noble gases and the negative indexing is below." src="../_images/list_indexing.png" style="width: 113.05px; height: 86.1px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">A graphical description of the <code class="docutils literal notranslate"><span class="pre">noble_gases</span></code> list, showing positive and negative indexes.</span><a class="headerlink" href="#list-indexing" title="Permalink to this image">¶</a></p>
+</div>
+<p>An important feature of Python lists is that they are <em>mutable</em> which means that we can change values in the list.
+For example, you may have noticed at the <code class="docutils literal notranslate"><span class="pre">noble_gases</span></code> list lacked a capital letter in <code class="docutils literal notranslate"><span class="pre">'helium'</span></code>, let’s fix that,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noble_gases</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Helium&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">noble_gases</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Helium&#39;, &#39;Neon&#39;, &#39;Argon&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the string has been updated.</p>
+<p>As can be seen from <a class="reference internal" href="#list-indexing"><span class="std std-numref">Fig. 2</span></a>, the final element of the list has an index of <span class="math notranslate nohighlight">\(n-1\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the length of the list.
+The length of a given list can be found with the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function, so we can access the final item in the list with the following,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noble_gases</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">noble_gases</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Argon&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, there is a more efficient method, that can be seen below the list in <a class="reference internal" href="#list-indexing"><span class="std std-numref">Fig. 2</span></a>, where <em>negative indexing</em> is used.
+So <span class="math notranslate nohighlight">\(-1\)</span> is the final element in the list,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noble_gases</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Argon&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can concatenate two lists, for example say we have a few more gases to add to our <code class="docutils literal notranslate"><span class="pre">noble_gases</span></code> list,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noble_gases</span> <span class="o">=</span> <span class="n">noble_gases</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Krypton&#39;</span><span class="p">,</span> <span class="s1">&#39;Xenon&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">noble_gases</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Helium&#39;, &#39;Neon&#39;, &#39;Argon&#39;, &#39;Krypton&#39;, &#39;Xenon&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you just want to add a single variable to the list, we can <code class="docutils literal notranslate"><span class="pre">append</span></code> to the list as follows,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noble_gases</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Radon&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">noble_gases</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Helium&#39;, &#39;Neon&#39;, &#39;Argon&#39;, &#39;Krypton&#39;, &#39;Xenon&#39;, &#39;Radon&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In addition to getting single items from the list, we are also able to access ranges of items, referred to as <em>slices</em>, using the <code class="docutils literal notranslate"><span class="pre">:</span></code> notation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">noble_gases</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Neon&#39;, &#39;Argon&#39;, &#39;Krypton&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The slicing notation can be a bit confusing, it is inclusive then exclusive.
+The slice of the list <em>includes</em> the item with the index that preceeds the colon, and <em>excludes</em> that which follows the colon.
+In the code about, we can see that the item with index <span class="math notranslate nohighlight">\(1\)</span> is included, but that with index <span class="math notranslate nohighlight">\(4\)</span> is excluded.
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">list_slice</span></code> shows slicing graphically.</p>
+<div class="figure align-default" id="list-slicing">
+<a class="reference internal image-reference" href="../_images/list_slicing.png"><img alt="A graphical description of list slicing, where the positive indexing is shown above the element name for the first three noble gases and the negative indexing is below. The slice from 1 to 4 is idenfied." src="../_images/list_slicing.png" style="width: 173.25px; height: 62.99999999999999px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">A graphical description of slicing for lists.</span><a class="headerlink" href="#list-slicing" title="Permalink to this image">¶</a></p>
+</div>
+<p>We can also <em>skip</em> elements from a list slice, using a second colon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">noble_gases</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Neon&#39;, &#39;Krypton&#39;, &#39;Radon&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that by omitting the second index (between the two colons), implicitly we have said to run to the end of the list (index <code class="docutils literal notranslate"><span class="pre">-1</span></code>).
+The same can be done for the first index, and the start of the list (index <code class="docutils literal notranslate"><span class="pre">0</span></code>) will be used.</p>
+<p>Finally, a list does <em>not</em> need to made up of items of a consistent type.
+The above examples have focused on a list containing all strings, however the list is able to handle disparate types of information.
+For example, below we have a list that contains a string, integer, and a float,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chlorine</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Cl&#39;</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mf">35.5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">chlorine</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Cl&#39;, 17, 35.5]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
