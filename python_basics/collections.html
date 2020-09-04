@@ -239,6 +239,16 @@
    Lists
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuples">
+   Tuples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   Dictionaries
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -425,12 +435,12 @@ In the code about, we can see that the item with index <span class="math notrans
 <p>We can also <em>skip</em> elements from a list slice, using a second colon.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">noble_gases</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">noble_gases</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Neon&#39;, &#39;Krypton&#39;, &#39;Radon&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Radon&#39;, &#39;Xenon&#39;, &#39;Krypton&#39;, &#39;Argon&#39;, &#39;Neon&#39;, &#39;Helium&#39;]
 </pre></div>
 </div>
 </div>
@@ -459,6 +469,186 @@ For example, below we have a list that contains a string, integer, and a float,<
 </div>
 </div>
 </div>
+<blockquote>
+<div><p><strong>Exercise</strong>: Create a new list called <code class="docutils literal notranslate"><span class="pre">halogens</span></code> and populate it with the names of the halogen elements, in order of increasing atomic number. Using this list, determine what using a negative number following the second colon (e.g. <code class="docutils literal notranslate"><span class="pre">[::-1]</span></code>) will result in.</p>
+</div></blockquote>
+</div>
+<div class="section" id="tuples">
+<h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h2>
+<p>The <em>immutable</em> cousin of the list is the tuple.
+This collection type is similar to the list in many ways, such as indexing, slicing and concatenation.
+However, the elements of a tuple cannot be changed once the collection is defined.
+Let’s see how a tuple is created,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orbital_occupancy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">orbital_occupancy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
+</pre></div>
+</div>
+</div>
+</div>
+<p>The immutable nature of the tuple means that once created, the elements cannot be changed, so the following returns an error,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orbital_occupancy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mi">1947876</span><span class="n">d2b32</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">orbital_occupancy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>This immutability does not mean that the entire object cannot be overwritten,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orbital_occupancy</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">orbital_occupancy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dictionaries">
+<h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h2>
+<p>The last collection type we will look at is the dictionary or <code class="docutils literal notranslate"><span class="pre">dict</span></code>.
+This type consists of <code class="docutils literal notranslate"><span class="pre">keys</span></code> and <code class="docutils literal notranslate"><span class="pre">values</span></code>, which are analogous to the words and definitions in a traditional dictionary.
+Consider if we rewrite the <code class="docutils literal notranslate"><span class="pre">chlorine</span></code> list as a dictionary,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chlorine</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;chemical symbol&#39;</span><span class="p">:</span> <span class="s1">&#39;Cl&#39;</span><span class="p">,</span> <span class="s1">&#39;atomic number&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;average mass number&#39;</span><span class="p">:</span> <span class="mf">35.45</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">chlorine</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+</pre></div>
+</div>
+</div>
+</div>
+<p>The meaning of each of the values is sudden a lot more clear than in the list object.
+We can print all of the keys, which is helping if you are passed a dictionary from another function and need to understand the contents,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chlorine</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;chemical symbol&#39;, &#39;atomic number&#39;, &#39;average mass number&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is possible to access one of the values by passing the relevant <code class="docutils literal notranslate"><span class="pre">key</span></code> as one would pass an index,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chlorine</span><span class="p">[</span><span class="s1">&#39;atomic number&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, indexing does not work for dictionaries as the index is not a valid <code class="docutils literal notranslate"><span class="pre">key</span></code>,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chlorine</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">25</span><span class="o">-</span><span class="n">a0685985ddc1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">chlorine</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="ne">KeyError</span>: 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also increase the information in a dictionary by adding new keys.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chlorine</span><span class="p">[</span><span class="s1">&#39;number of isotopes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">chlorine</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;chemical symbol&#39;: &#39;Cl&#39;, &#39;atomic number&#39;: 17, &#39;average mass number&#39;: 35.45, &#39;number of isotopes&#39;: 2}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, the dictionaries items need not be single variables, like floats and strings, they can also be collections,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chlorine</span><span class="p">[</span><span class="s1">&#39;mass numbers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">37</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">chlorine</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;chemical symbol&#39;: &#39;Cl&#39;, &#39;atomic number&#39;: 17, &#39;average mass number&#39;: 35.45, &#39;number of isotopes&#39;: 2, &#39;mass numbers&#39;: (35, 37)}
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><strong>Exercise</strong>: Create a dictionary-type object (with the variable name <code class="docutils literal notranslate"><span class="pre">d_block</span></code>) where the <code class="docutils literal notranslate"><span class="pre">keys</span></code> are the names of the first row of transition metals, and the <code class="docutils literal notranslate"><span class="pre">values</span></code> are the numbers of valence electrons.</p>
+</div></blockquote>
 </div>
 </div>
 
