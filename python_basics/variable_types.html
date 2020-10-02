@@ -242,6 +242,20 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise:
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -253,8 +267,8 @@
 <h1>Variable Types and Assignment<a class="headerlink" href="#variable-types-and-assignment" title="Permalink to this headline">¶</a></h1>
 <p>Last week, we looked at some simple operations and objects.
 Here, we will see how we can package these objects into <em>variables</em>, enabling their reuse in other parts of the code.
-Additionally, we will investigate, in detail, the different variable types that are present in Python.</p>
-<p>A variable is a container that Python uses to store some <em>data</em>.
+Additionally, we will investigate, in detail, the different variable types that are present in Python (previously we saw just <strong>integers</strong>, <strong>floats</strong>, and <strong>strings</strong>).</p>
+<p>A variable is a container that Python uses to store some from of <em>data</em>.
 A variable may be created and then reused at a later stage in the code.
 When a variable is <em>assigned</em>, the <em>value</em> of the variable is set to some computer memory position which is indexed by the <em>variable name</em>.
 So the variable can be reused over and over by using this variable name.
@@ -276,9 +290,6 @@ Common variable types that are present in Python include:</p>
 <li><p><em>string</em> (<code class="docutils literal notranslate"><span class="pre">str</span></code>): textual information, such as a word or a sentence. These are written between single or double inverted commas, <code class="docutils literal notranslate"><span class="pre">'like</span> <span class="pre">this'</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;this&quot;</span></code>. <code class="docutils literal notranslate"><span class="pre">str</span></code>-type objects are contained within either double or single quotes. However, you <strong>cannot</strong> use a mixture of the two, e.g. <code class="docutils literal notranslate"><span class="pre">my_string</span> <span class="pre">=</span> <span class="pre">'Hello</span> <span class="pre">World!&quot;</span></code> will return an error.</p></li>
 <li><p><em>boolean</em> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>): a <em>logical</em> variable type, named for <a class="reference external" href="https://en.wikipedia.org/wiki/George_Boole">George Boole</a> who defined an algebraic logic system in the 19th century. These may hold one of two values, <code class="docutils literal notranslate"><span class="pre">True</span></code> or `false.</p></li>
 </ul>
-<blockquote>
-<div><p><strong>Exercise</strong>: In an empty Jupyter Notebook investigate the creation of variables of different types, try and come up with a chemistry example for each (complex might be a bit hard but investigate the literature, for example, the scattering length of a given atom).</p>
-</div></blockquote>
 <p>The <code class="docutils literal notranslate"><span class="pre">ideal_gas_constant</span></code> code above assigned a <code class="docutils literal notranslate"><span class="pre">float</span></code>-type variable to the name <code class="docutils literal notranslate"><span class="pre">ideal_gas_constant</span></code>.
 The <code class="docutils literal notranslate"><span class="pre">type()</span></code> function will inform you of the type of the variable that is passed as an argument.
 For example, we can use the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function to get the type of the variable named <code class="docutils literal notranslate"><span class="pre">speed_of_light</span></code>.</p>
@@ -294,6 +305,47 @@ For example, we can use the <code class="docutils literal notranslate"><span cla
 </pre></div>
 </div>
 </div>
+</div>
+<p>Above, we reused the <code class="docutils literal notranslate"><span class="pre">speed_of_light</span></code> variable within a single cell.
+But the definition of the variable is stored in the kernel until the kernel is restarted or the variable is redefined.
+This means we can check the type of <code class="docutils literal notranslate"><span class="pre">ideal_gas_constant</span></code> below, and then redefine the value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">ideal_gas_constant</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ideal_gas_constant</span> <span class="o">=</span> <span class="mf">1.987e-3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have redefined the ideal gas constant in units of kcalK<sup>-1</sup>mol<sup>-1</sup>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">ideal_gas_constant</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise">
+<h2>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>Investigate the creation of variables of different types.
+Come up with an example of for each of the variable types that is descriptively named.
+For each check that the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function returns the expected type.</p>
 </div>
 </div>
 
