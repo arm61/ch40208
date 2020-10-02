@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dictionaries &#8212; CH40208: Topics in Computational Chemistry</title>
+    <title>Using Python as a calculator &#8212; CH40208: Topics in Computational Chemistry</title>
     
   <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting started with strings" href="getting_started_with_strings.html" />
+    <link rel="prev" title="Why we encourage typing out the code examples" href="why_we_encourage_typing_out_the_code_examples.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -133,7 +135,7 @@
   Python Basics
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="python_first_chemistry_later.html">
    Python first, chemistry later
@@ -144,8 +146,8 @@
    Why we encourage typing out the code examples
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="using_Python_as_a_calculator.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Using Python as a calculator
   </a>
  </li>
@@ -196,7 +198,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/python_basics/dictionaries.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/python_basics/using_Python_as_a_calculator.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -220,7 +222,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/python_basics/dictionaries.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/python_basics/using_Python_as_a_calculator.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -228,7 +230,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/python_basics/dictionaries.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/python_basics/using_Python_as_a_calculator.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -242,6 +244,30 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-2-2">
+   Calculating 2+2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-arithmetic">
+   Simple arithmetic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integers-and-floats">
+   Integers and Floats
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -249,118 +275,145 @@
         
               <div>
                 
-  <div class="section" id="dictionaries">
-<h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
-<p>The last collection type we will look at is the dictionary or <code class="docutils literal notranslate"><span class="pre">dict</span></code>.
-This type consists of <code class="docutils literal notranslate"><span class="pre">keys</span></code> and <code class="docutils literal notranslate"><span class="pre">values</span></code>, which are analogous to the words and definitions in a traditional dictionary.
-Consider if we rewrite the <code class="docutils literal notranslate"><span class="pre">chlorine</span></code> list as a dictionary,</p>
+  <div class="section" id="using-python-as-a-calculator">
+<h1>Using Python as a calculator<a class="headerlink" href="#using-python-as-a-calculator" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="calculating-2-2">
+<h2>Calculating 2+2<a class="headerlink" href="#calculating-2-2" title="Permalink to this headline">¶</a></h2>
+<p>One of the simplest uses of Python is as a simple calculator.</p>
+<p>This also introduces us to the idea of working with numbers which is a key part of using Python for scientific applications.</p>
+<p>Open a new Notebook and enter into a <strong>code cell</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chlorine</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;chemical symbol&#39;</span><span class="p">:</span> <span class="s1">&#39;Cl&#39;</span><span class="p">,</span> <span class="s1">&#39;atomic number&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;average mass number&#39;</span><span class="p">:</span> <span class="mf">35.45</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">chlorine</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
 </div>
-<p>The meaning of each of the values is sudden a lot more clear than in the list object.
-We can print all of the keys, which is helping if you are passed a dictionary from another function and need to understand the contents,</p>
+<p>Running this cell should give the output above.</p>
+<p>You can add space between the numbers to make things easier to read:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chlorine</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;chemical symbol&#39;, &#39;atomic number&#39;, &#39;average mass number&#39;])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
 </div>
-<p>It is possible to access one of the values by passing the relevant <code class="docutils literal notranslate"><span class="pre">key</span></code> as one would pass an index,</p>
+<p>Or wrap the expression in brackets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chlorine</span><span class="p">[</span><span class="s1">&#39;atomic number&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
 </div>
-<p>However, indexing does not work for dictionaries as the index is not a valid <code class="docutils literal notranslate"><span class="pre">key</span></code>,</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chlorine</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<p>And still get the same result.</p>
+</div>
+<div class="section" id="simple-arithmetic">
+<h2>Simple arithmetic<a class="headerlink" href="#simple-arithmetic" title="Permalink to this headline">¶</a></h2>
+<p>You are not limited to adding numbers. Try entering the following expressions into code cells and <strong>executing</strong> them (running the cells.):</p>
+<ul class="simple">
+<li><p>subtraction:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>multiplication:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>powers (e.g. 4<sup>2</sup>)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>division</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">/</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">a0685985ddc1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">chlorine</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="ne">KeyError</span>: 1
+<div class="section" id="integers-and-floats">
+<h2>Integers and Floats<a class="headerlink" href="#integers-and-floats" title="Permalink to this headline">¶</a></h2>
+<p>Notice that the last example gives <code class="docutils literal notranslate"><span class="pre">3.0</span></code> and not <code class="docutils literal notranslate"><span class="pre">3</span></code> as the result. Python distinguishes between <strong>integers</strong> (also called <strong>ints</strong>) and <strong>floating point numbers</strong> (also called <strong>floats</strong>):</p>
+<ul class="simple">
+<li><p>Integers: A number <strong>without</strong> a decimal point: e.g. 1, 2, 100, 10<sup>10</sup>.</p></li>
+<li><p>Floats: A number <strong>with</strong> a decimal point. e.g. 3.14159, 12.0107, 8.3144 (you might recognise these).</p></li>
+</ul>
+<p>Arithmetic also works with <strong>floats</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">2.0</span> <span class="o">+</span> <span class="mf">2.0</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p>We can also increase the information in a dictionary by adding new keys.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chlorine</span><span class="p">[</span><span class="s1">&#39;number of isotopes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">4.0</span> <span class="o">*</span> <span class="mf">2.0</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">chlorine</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">4.0</span> <span class="o">**</span> <span class="mf">2.0</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;chemical symbol&#39;: &#39;Cl&#39;, &#39;atomic number&#39;: 17, &#39;average mass number&#39;: 35.45, &#39;number of isotopes&#39;: 2}
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">6.0</span> <span class="o">/</span> <span class="mf">2.0</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p>Finally, the dictionaries items need not be single variables, like floats and strings, they can also be collections,</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chlorine</span><span class="p">[</span><span class="s1">&#39;mass numbers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">37</span><span class="p">)</span>
+<p>And with mixtures of <strong>integers</strong> and <strong>floats</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mf">2.0</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">chlorine</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">*</span> <span class="mf">2.0</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;chemical symbol&#39;: &#39;Cl&#39;, &#39;atomic number&#39;: 17, &#39;average mass number&#39;: 35.45, &#39;number of isotopes&#39;: 2, &#39;mass numbers&#39;: (35, 37)}
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">4.0</span> <span class="o">**</span> <span class="mi">2</span>
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">/</span> <span class="mf">2.0</span>
+</pre></div>
 </div>
+<p>Notice how these last examples always output a <strong>float</strong>.</p>
+<p><strong>floats</strong> can also be written without any numbers after the decimal point, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">42.</span>
+</pre></div>
 </div>
-<blockquote>
-<div><p><strong>Exercise</strong>: Create a dictionary-type object (with the variable name <code class="docutils literal notranslate"><span class="pre">d_block</span></code>) where the <code class="docutils literal notranslate"><span class="pre">keys</span></code> are the names of the first row of transition metals, and the <code class="docutils literal notranslate"><span class="pre">values</span></code> are the numbers of valence electrons.</p>
-</div></blockquote>
+<p>is the same as <code class="docutils literal notranslate"><span class="pre">42.0</span></code>.</p>
+<p>You can do integer division (also called <strong>floor division</strong> ) using <code class="docutils literal notranslate"><span class="pre">//</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">//</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Integer division rounds down:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">//</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>You can calculate the <strong>remainder</strong> of integer division using the <code class="docutils literal notranslate"><span class="pre">%</span></code> symbol (called the <strong>modulo</strong> operator).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">%</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span> <span class="o">%</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Brackets can be used to specify the order of operations in more complicated expressions, according to the usual mathematical rules:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We will return to mathematical expressions in Python in more detail later in the course.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -391,6 +444,8 @@ We can print all of the keys, which is helping if you are passed a dictionary fr
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="why_we_encourage_typing_out_the_code_examples.html" title="previous page">Why we encourage typing out the code examples</a>
+    <a class='right-next' id="next-link" href="getting_started_with_strings.html" title="next page">Getting started with strings</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

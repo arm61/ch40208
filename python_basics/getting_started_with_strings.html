@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Optimisation &#8212; CH40208: Topics in Computational Chemistry</title>
+    <title>Getting started with strings &#8212; CH40208: Topics in Computational Chemistry</title>
     
   <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -57,6 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Using Python as a calculator" href="using_Python_as_a_calculator.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -133,24 +134,24 @@
   Python Basics
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../python_basics/python_first_chemistry_later.html">
+  <a class="reference internal" href="python_first_chemistry_later.html">
    Python first, chemistry later
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../python_basics/why_we_encourage_typing_out_the_code_examples.html">
+  <a class="reference internal" href="why_we_encourage_typing_out_the_code_examples.html">
    Why we encourage typing out the code examples
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../python_basics/using_Python_as_a_calculator.html">
+  <a class="reference internal" href="using_Python_as_a_calculator.html">
    Using Python as a calculator
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../python_basics/getting_started_with_strings.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Getting started with strings
   </a>
  </li>
@@ -196,9 +197,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/comp_chem_fundamentals/optimisation.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/python_basics/getting_started_with_strings.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -215,10 +216,46 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/python_basics/getting_started_with_strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/python_basics/getting_started_with_strings.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises:
+  </a>
+ </li>
+</ul>
+
+        </nav>
         
     </div>
 </div>
@@ -227,8 +264,79 @@
         
               <div>
                 
-  <div class="section" id="optimisation">
-<h1>Optimisation<a class="headerlink" href="#optimisation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="getting-started-with-strings">
+<h1>Getting started with strings<a class="headerlink" href="#getting-started-with-strings" title="Permalink to this headline">¶</a></h1>
+<p>We will also be working with pieces of text, which are represented in Python as <strong>strings</strong>.</p>
+<p>A <strong>string</strong> must be enclosed in a matching pair of <strong>single quotes</strong> <code class="docutils literal notranslate"><span class="pre">'text</span> <span class="pre">goes</span> <span class="pre">here'</span></code> or <strong>double quotes</strong> <code class="docutils literal notranslate"><span class="pre">&quot;text</span> <span class="pre">goes</span> <span class="pre">here&quot;</span></code>.</p>
+<p>Entering a string into a <strong>code cell</strong> and running the cell will just output the string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;I am a string with single quotes&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I am a string with single quotes&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I am a string with double quotes&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I am a string with double quotes&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Trying to pair single and double quotes will give an error or an unexpected output:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;I am a string with mismatched quotes&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-3-4b5c4a6d02da&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="s1">&#39;I am a string with mismatched quotes&quot;</span>
+                                          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: EOL while scanning string literal
+</pre></div>
+</div>
+</div>
+</div>
+<p>This gives a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, which is one of the many error types invalid Python code can produce. A syntax error is one of the most basic error types and means that the Python interpreter is not able to understand the code.</p>
+<p>We will dive into error messages and types of errors in Python in more detail later in the course.</p>
+<p>You can include single quotes in a string that is enclosed in double quotes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Well isn&#39;t that clever?&quot;</span>
+</pre></div>
+</div>
+<p>and double quotes in a string that is enclosed in single quotes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;The cat asked, “Where do you want to go?”&#39;</span>
+</pre></div>
+</div>
+<p>or you can indicate that quotes should be treated as text and not as string delimiters by preceding them with a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code> (called <strong>escaping</strong> the quote):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Well isn</span><span class="se">\&#39;</span><span class="s1">t that clever&#39;</span>
+</pre></div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>Strings can be manipulated using <em>some</em> mathematical operations (but not others).<br />
+Investigate what happens when you try:</p>
+<ul class="simple">
+<li><p>Adding two strings, using <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p></li>
+<li><p>Subtracting one string from another, using <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p></li>
+<li><p>Adding a string to an integer or a float, using <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+<li><p>Mutiplying two strings together, using <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p></li>
+<li><p>Multiplying a string by a float, using <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p></li>
+<li><p>Multiplying a string by an integer, using <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p></li>
+</ul>
+<p>Can you reason why you get the results (and errors) that you do?</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -244,7 +352,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./comp_chem_fundamentals"
+            path: "./python_basics"
         },
         predefinedOutput: true
     }
@@ -259,6 +367,7 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="using_Python_as_a_calculator.html" title="previous page">Using Python as a calculator</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
