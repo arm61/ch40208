@@ -186,39 +186,7 @@
      Lists
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="tuples.html">
-     Tuples
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dictionaries.html">
-     Dictionaries
-    </a>
-   </li>
   </ul>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Working with Data
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../working_with_data/numpy_arrays.html">
-   NumPy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../working_with_data/plotting.html">
-   Plotting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../working_with_data/ideal_gas_law.html">
-   Investigation of the ideal gas law
-  </a>
  </li>
 </ul>
 
@@ -262,9 +230,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/python_basics/collections.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/python_basics/collections.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -282,28 +250,6 @@
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/python_basics/collections.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/python_basics/collections.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
     </div>
 
     <!-- Table of contents -->
@@ -318,14 +264,20 @@
                 
   <div class="section" id="collections">
 <h1>Collections<a class="headerlink" href="#collections" title="Permalink to this headline">¶</a></h1>
-<p>In this section thus far, we have been looking at the use of variable types that exist <em>individually</em>, e.g. one float or a single string, but Python can go beyond individual items and natively has objects that can hold <em>collections</em> of variables.
-In this section, we will look in detail at three different types of collections in Python, namely:</p>
+<p>Up until now we have dealt with individual pieces of data, such <strong>integer</strong> or <strong>floating point</strong> data types to store numerical data, or <strong>strings</strong> to represent textual data.</p>
+<p>Often we want to work with <strong>collections</strong> of data, such as a time-series of concentrations from an experiment, or a set of yields obtained from different experimental protocols, or the list of students enrolled in <strong>CH40208 Topics in Computational Chemistry</strong>.</p>
+<p>Python includes a number of built-in <strong>container</strong> datatypes, that can be used to store multiple pieces of data in a structured way.</p>
+<p>Three commonly used data structures in Python are:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="lists.html"><span class="doc std std-doc">Lists</span></a></p></li>
-<li><p><a class="reference internal" href="tuples.html"><span class="doc std std-doc">Tuples</span></a></p></li>
-<li><p><a class="reference internal" href="dictionaries.html"><span class="doc std std-doc">Dictionaries</span></a></p></li>
+<li><p><strong>lists</strong> — which are used to store an <strong>ordered sequence</strong> of data that is <strong>changeable</strong>.</p></li>
+<li><p><strong>tuples</strong> — which are used to store an <strong>ordered sequence</strong> of data that is <strong>unchangeable</strong>.</p></li>
+<li><p><strong>dictionaries</strong> — which are used to store <strong>unordered</strong> data as <strong>key–value pairs</strong> (the data in dictionaries can be changed).</p></li>
 </ul>
-<p>Similar to the individual object types, different operations can be performed on each of these collection types.</p>
+<p><strong>Lists</strong> and <strong>tuples</strong> can be used in lots of the same places, but they differ in one very important way:</p>
+<ul class="simple">
+<li><p><strong>lists</strong> are <strong>mutable</strong>—the data stored in them can be altered, new data can be added to the list, and existing data can be removed from the list.</p></li>
+<li><p><strong>tuples</strong> are <strong>immutable</strong>—once a tuple has been created, the data stored cannot be changed, new data cannot be added, and existing data cannot be removed.</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 </div>
