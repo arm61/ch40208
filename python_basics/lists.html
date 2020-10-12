@@ -57,6 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Loops" href="loops.html" />
     <link rel="prev" title="Arithmetic" href="arithmetic.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -178,6 +179,23 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loops.html">
+   Loops
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Working with Data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../working_with_data/numpy_arrays.html">
+   NumPy
   </a>
  </li>
 </ul>
@@ -309,6 +327,23 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#working-with-nested-lists">
    Working with nested lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summing-over-lists-using-sum-or-join">
+   Summing over lists using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sum()
+    </span>
+   </code>
+   (or
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .join()
+    </span>
+   </code>
+   )
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -613,14 +648,6 @@
 <p>This is equivalent to a function that takes <strong>two</strong> arguments: the list we want to append to, and the object to be appended. For example, we might imagine an <code class="docutils literal notranslate"><span class="pre">append_to_list()</span></code> function that works as follows (note that this <code class="docutils literal notranslate"><span class="pre">append_to_list()</span></code> function is purely imagined and doesn’t exist in native Python):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">append_to_list</span><span class="p">(</span><span class="n">the_list</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">the_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nobel_gases</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Helium&#39;</span><span class="p">,</span> <span class="s1">&#39;Neon&#39;</span><span class="p">,</span> <span class="s1">&#39;Argon&#39;</span><span class="p">]</span>
 <span class="n">append_to_list</span><span class="p">(</span><span class="n">nobel_gases</span><span class="p">,</span> <span class="s1">&#39;Krypton&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">nobel_gases</span><span class="p">)</span>
@@ -867,13 +894,90 @@
 </div>
 </div>
 </div>
+<div class="section" id="summing-over-lists-using-sum-or-join">
+<h2>Summing over lists using <code class="docutils literal notranslate"><span class="pre">sum()</span></code> (or <code class="docutils literal notranslate"><span class="pre">.join()</span></code>)<a class="headerlink" href="#summing-over-lists-using-sum-or-join" title="Permalink to this headline">¶</a></h2>
+<p>Python provides a <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function that can be used to “sum” or add-together all the elements of a list.</p>
+<p>e.g.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">list_of_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is the same as adding all the elements explicitly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">list_of_numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">list_of_numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">list_of_numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">list_of_numbers</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function only works for lists of <strong>numbers</strong>, so can’t be used to (for example) &amp;lqduo;add” a list of <strong>strings</strong>. Trying to use <code class="docutils literal notranslate"><span class="pre">sum()</span></code> to add a list of <strong>strings</strong> will raise a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;This&quot;</span><span class="p">,</span> <span class="s2">&quot;will&quot;</span><span class="p">,</span> <span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="s2">&quot;everything&quot;</span><span class="p">,</span> <span class="s2">&quot;together&quot;</span><span class="p">]</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">43</span><span class="o">-</span><span class="mi">3</span><span class="n">a9c9dc32b9f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">message</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;This&quot;</span><span class="p">,</span> <span class="s2">&quot;will&quot;</span><span class="p">,</span> <span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="s2">&quot;everything&quot;</span><span class="p">,</span> <span class="s2">&quot;together&quot;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">sum</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>To “add” lists of strings we can use the <code class="docutils literal notranslate"><span class="pre">join()</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This will add everything together&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">join()</span></code> is a <strong>string method</strong>, where the string defines what to insert <strong>between</strong> the elements of <code class="docutils literal notranslate"><span class="pre">message</span></code>; in this case we have used a string containing one space, but this could be anything:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;+&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This+will+add+everything+together&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="exercises">
 <h2>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Create a new list called <code class="docutils literal notranslate"><span class="pre">halogens</span></code> and populate it with the names of the halogen elements, in order of increasing atomic number. Using this list, determine what using a negative number following the second colon (e.g. <code class="docutils literal notranslate"><span class="pre">[::-1]</span></code>) will result in.</p></li>
 <li><p>The distance (<span class="math notranslate nohighlight">\(r\)</span>) between two atoms (<span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>) can be found with the following equation,</p>
 <div class="math notranslate nohighlight">
-\[ r = \sqrt{(x_i - x_j)^2 + (y_i - y_j)^2 + (z_i + z_j)^2}, \]</div>
+\[ r = \sqrt{(x_i - x_j)^2 + (y_i - y_j)^2 + (z_i - z_j)^2}, \]</div>
 <p>where, <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_j\)</span> are the <em>x</em>-coordinates for the atoms <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> respectively, while <span class="math notranslate nohighlight">\(y_i\)</span> and <span class="math notranslate nohighlight">\(y_j\)</span> are the <em>y</em>-coordinates and <span class="math notranslate nohighlight">\(z_i\)</span> and <span class="math notranslate nohighlight">\(z_j\)</span> are the <em>z</em>-coordinates.
 Below, (as lists) are given the atomic coordinates to two triatomic molecules, where for each atom the list is <code class="docutils literal notranslate"><span class="pre">atom</span> <span class="pre">=</span> <span class="pre">[x_position,</span> <span class="pre">y_position,</span> <span class="pre">z_position]</span></code>.
 For each molecule, calculate the intramolecular distances between all thre atoms.<br />
@@ -928,6 +1032,7 @@ Having calculated all of the intramolecular distances, comment on the shape of e
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="arithmetic.html" title="previous page">Arithmetic</a>
+    <a class='right-next' id="next-link" href="loops.html" title="next page">Loops</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
