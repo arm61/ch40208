@@ -339,10 +339,10 @@
                 
   <div class="section" id="file-i-o">
 <h1>File I/O<a class="headerlink" href="#file-i-o" title="Permalink to this headline">¶</a></h1>
-<p>Now that you are confident in mathematical operations and the plotting of arrays of data, if will be useful to be able to read data (for example from an experimental measurement) into the Python kernel.
-This will allow you to perform mathematical operations on data from the file, and potentially plot the analysed result.</p>
-<p>In this section, we will show the parsing of two common types of file, known as <code class="docutils literal notranslate"><span class="pre">.txt</span></code> (text files) and <code class="docutils literal notranslate"><span class="pre">.csv</span></code> (comma-seperated value file).
-The same basic function, from the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library is used to read these files in, with some changes necessaary to the keyword arugments that are passed to the function.</p>
+<p>Now that you are confident in mathematical operations and the plotting of arrays of data, it will be useful to be able to read data (for example from an experimental measurement) into the Python kernel.
+This will allow you to perform mathematical operations on data from the file and potentially plot the analysed result.</p>
+<p>In this section, we will show the parsing of two common types of file, known as <code class="docutils literal notranslate"><span class="pre">.txt</span></code> (text files) and <code class="docutils literal notranslate"><span class="pre">.csv</span></code> (comma-separated value file).
+The same basic function, from the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library, is used to read these files in, with some changes necessary to the keyword arguments that are passed to the function.</p>
 <div class="section" id="txt-files">
 <h2><code class="docutils literal notranslate"><span class="pre">.txt</span></code> files<a class="headerlink" href="#txt-files" title="Permalink to this headline">¶</a></h2>
 <p>Text files look like the following,</p>
@@ -483,7 +483,7 @@ By default this variable is <code class="docutils literal notranslate"><span cla
 <div class="section" id="csv-files">
 <h2><code class="docutils literal notranslate"><span class="pre">.csv</span></code> files<a class="headerlink" href="#csv-files" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">.csv</span></code> files are extremely popular output data files for experimental equipment.
-While the <code class="docutils literal notranslate"><span class="pre">.txt</span></code> files above uses white-space (spaces or tabs) to seperate the values in a row, the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format uses commas (hence the name).
+While the <code class="docutils literal notranslate"><span class="pre">.txt</span></code> files above use white-space (spaces or tabs) to separate the values in a row, the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format uses commas (hence the name).
 The <code class="docutils literal notranslate"><span class="pre">.csv</span></code> equivalent of the previous text files are available <a href="ideal_gas_rows.csv" download>as rows</a> and <a href="ideal_gas_cols.csv" download>as columns</a>.
 We can use the Jupyter notebook to have a look at the files if we wish, using the <code class="docutils literal notranslate"><span class="pre">!head</span></code> command (this is part of the Jupyter Notebook <strong>not</strong> standard Python).</p>
 <div class="cell docutils container">
@@ -504,7 +504,7 @@ We can use the Jupyter notebook to have a look at the files if we wish, using th
 </div>
 </div>
 </div>
-<p>Ths command will print the first ten lines of a file, since this file is less than ten lines, we can see the whole thing.</p>
+<p>This command will print the first ten lines of a file since this file is less than ten lines, we can see the whole thing.</p>
 <p>The reading of <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files requires another keyword argument, this time called <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> (this is the name given to the string that separates the values).
 Therefore, for <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files the <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> is the comma.</p>
 <div class="cell docutils container">
@@ -556,7 +556,7 @@ Therefore, for <code class="docutils literal notranslate"><span class="pre">.csv
 <h2>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Investigate the <a href="toulene_ir.csv" download>IR spectra</a> data for toulene, initially using the <code class="docutils literal notranslate"><span class="pre">!head</span></code> command and then read in the data with the <code class="docutils literal notranslate"><span class="pre">np.loadtxt()</span></code> function.</p></li>
-<li><p>Plot the data and correctly label the axis, in accordance with the information given in the file header (the part with the <code class="docutils literal notranslate"><span class="pre">#</span></code> symbols that is not parsed by the <code class="docutils literal notranslate"><span class="pre">np.loadtxt()</span></code> function).</p></li>
+<li><p>Plot the data and correctly label the axis, following the information given in the file header (the part with the <code class="docutils literal notranslate"><span class="pre">#</span></code> symbols that is not parsed by the <code class="docutils literal notranslate"><span class="pre">np.loadtxt()</span></code> function).</p></li>
 </ul>
 </div>
 </div>
