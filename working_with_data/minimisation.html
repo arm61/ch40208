@@ -347,8 +347,8 @@ The first part of the above equation represents the Pauli exclusion principle, w
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mf">1e5</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">**</span> <span class="mi">12</span><span class="p">)</span> <span class="o">-</span> <span class="mi">40</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">**</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;rij/Å&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;E/eV&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$r_</span><span class="si">{ij}</span><span class="s1">$/Å&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$E$/eV&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -370,6 +370,8 @@ $<span class="math notranslate nohighlight">\( r_{\text{new}} = r_{\text{old}} =
 <li><p>Go to step 2.
 By repeating this process multiple times, it should be possible to find the minimum of the potential energy, which is the minimum energy distance.</p></li>
 </ol>
+<p>The Newton-Raphson method is shown in action below.</p>
+<p><img alt="" src="../_images/line.gif" /></p>
 </div>
 <div class="section" id="exercise">
 <h2>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
@@ -385,6 +387,11 @@ In order to achieve this, you should do the following:</p>
 <li><p><span class="math notranslate nohighlight">\(A\)</span> = <span class="math notranslate nohighlight">\(1\times 10^{5}\)</span> eVÅ<sup>12</sup>, <span class="math notranslate nohighlight">\(B\)</span> = <span class="math notranslate nohighlight">\(40\)</span> eVÅ<sup>6</sup></p></li>
 <li><p><span class="math notranslate nohighlight">\(A\)</span> = <span class="math notranslate nohighlight">\(4\times 10^{5}\)</span> eVÅ<sup>12</sup>, <span class="math notranslate nohighlight">\(B\)</span> = <span class="math notranslate nohighlight">\(1\)</span> eVÅ<sup>6</sup></p></li>
 </ul>
+<p>The first and second derivatives of the Lennard-Jones potential are given below:</p>
+<div class="math notranslate nohighlight">
+\[ E' = -12\frac{A}{r^{13}} + 6\frac{B}{r^7} \]</div>
+<div class="math notranslate nohighlight">
+\[ E'' = 156\frac{A}{r^{14}} - 42\frac{B}{r^8} \]</div>
 </div>
 </div>
 
