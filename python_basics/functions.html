@@ -514,6 +514,25 @@ The code that you write today will not stay present in your memory forever.</p>
 There are a few common ways to format this in a docstring, we have opted for the <a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html">Google Style</a>, however other styles exist and it is important to be aware of them.
 This formatting is useful in the generation of documentation to accompany your code automatically.
 For example, the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.sqrt.html">NumPy docs</a> which you may have seen are automatically generated from docstrings in the definition of each function.</p>
+<p>In addition to these docstrings, you can also add comments to your code.
+These are usually less formally structured and can be put anywhere within the code.
+The <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol at the start of a line indicates a comment, and nothing following this character in a line will be interpreted by the Python kernel.
+For example, the cell below contains an informative comment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">absorbance</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="c1"># The spectrometer used 5 mm curvettes</span>
+<span class="n">beer_lambert</span><span class="p">(</span><span class="mi">21000</span><span class="p">,</span> <span class="n">absorbance</span><span class="p">,</span> <span class="n">path_length</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.009523809523809525
+</pre></div>
+</div>
+</div>
+</div>
+<p>The importance of good comments and docstrings cannot be overstated, communication of the code you have written is just as important as the code itself.</p>
 </div>
 <div class="section" id="content">
 <h3>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h3>
@@ -607,11 +626,42 @@ For example, we can repeat the above function but return the photon energy in bo
 </div>
 <div class="section" id="exercise">
 <h2>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
+<ul>
 <li><p>Write a function to calculate the distance between two atoms.
 Then rewrite to exercise in the loops section to utilise this function.
 Make sure to include a docstring describing the purpose of the function and outlining the arguments.</p></li>
+<li><p>Write another function that implements the second-order rate equation,
+$<span class="math notranslate nohighlight">\( [A]_t = \frac{[A]_0}{[A]_0kt + 1}, \)</span><span class="math notranslate nohighlight">\(
+where \)</span>[A]_t<span class="math notranslate nohighlight">\( is the concentration at time \)</span>t<span class="math notranslate nohighlight">\(, \)</span>[A]_0<span class="math notranslate nohighlight">\( is the initial concentration and \)</span>k<span class="math notranslate nohighlight">\( is the rate constant (note this a rearrangement from the familiar way of writing this equation where \)</span>[A]_t$ is a reciprocal).</p>
+<p>Plot the data below, as <span class="math notranslate nohighlight">\([A]_t\)</span> (<em>y</em>-axis) against <span class="math notranslate nohighlight">\(t\)</span> (<em>x</em>-axis), with a scatter plot (where you use <code class="docutils literal notranslate"><span class="pre">'o'</span></code>) and make sure to label your axes.
+Using, either a loop or the NumPy array operations and the function that you have defined, test if the following values of <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\([A]_0\)</span> accurately model the reaction by plotting the model data as a line on top of your scatter plot.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k = 0.006\)</span> mol<sup>-1</sup>dm<sup>3</sup>s<sup>-1</sup> and <span class="math notranslate nohighlight">\([A]_0 = 0.6\)</span> moldm<sup>-3</sup></p></li>
+<li><p><span class="math notranslate nohighlight">\(k = 0.0006\)</span> mol<sup>-1</sup>dm<sup>3</sup>s<sup>-1</sup> and <span class="math notranslate nohighlight">\([A]_0 = 0.4\)</span> moldm<sup>-3</sup></p></li>
+<li><p><span class="math notranslate nohighlight">\(k = 0.6\)</span> mol<sup>-1</sup>dm<sup>3</sup>s<sup>-1</sup> and <span class="math notranslate nohighlight">\([A]_0 = 0.2\)</span> moldm<sup>-3</sup></p></li>
 </ul>
+</li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(t\)</span>/s</p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>600</p></th>
+<th class="head"><p>1200</p></th>
+<th class="head"><p>1800</p></th>
+<th class="head"><p>2400</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\([A]_t\)</span>/moldm<sup>-3</sup></p></td>
+<td><p>0.400</p></td>
+<td><p>0.350</p></td>
+<td><p>0.311</p></td>
+<td><p>0.279</p></td>
+<td><p>0.254</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
