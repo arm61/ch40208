@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python first, chemistry later &#8212; CH40208: Topics in Computational Chemistry</title>
+    <title>Exercises &#8212; CH40208: Topics in Computational Chemistry</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,8 +57,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Why we encourage typing out the code examples" href="why_we_encourage_typing_out_the_code_examples.html" />
-    <link rel="prev" title="Exercises" href="../notebooks_introduction/exercises.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -135,9 +133,9 @@
   Python Basics
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_first_chemistry_later.html">
    Python first, chemistry later
   </a>
  </li>
@@ -255,9 +253,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/python_basics/python_first_chemistry_later.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/python_basics/getting_started_with_strings_exercises.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -275,6 +273,23 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/python_basics/getting_started_with_strings_exercises.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -287,11 +302,122 @@
         
               <div>
                 
-  <div class="section" id="python-first-chemistry-later">
-<h1>Python first, chemistry later<a class="headerlink" href="#python-first-chemistry-later" title="Permalink to this headline">¶</a></h1>
-<p>One of the goals of this course is for you to explore concepts and techniques used in computational chemistry research by writing your own Python code to solve various problems.</p>
-<p>To do this we need to start by going through the basics of programming in Python.</p>
-<p>For the first few weeks therefore we will be focussing almost entirely on the basics of programming in Python. Once you have had some practice writing, editing, and running pieces of Python code, we will move onto more complex programming concepts and start using these to explore some computational chemistry.</p>
+  <div class="section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<p>The focus of these exercises was on string manipulation.
+First, let us add two strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;John went &#39;</span> <span class="o">+</span> <span class="s1">&#39;for a walk&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;John went for a walk&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator will <a class="reference external" href="https://en.wikipedia.org/wiki/Concatenation">concatenate</a> these two string objects, merging them into a single string.</p>
+<p>Now we will try to subtract one string from another.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;The bird &#39;</span> <span class="o">-</span> <span class="s1">&#39;that never flew&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">2</span><span class="n">f8d00f19706</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;The bird &#39;</span> <span class="o">-</span> <span class="s1">&#39;that never flew&#39;</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for -: &#39;str&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This operation is not possible.
+This is due to the fact there is no logical way that one string may be <em>subtracted</em> from another.</p>
+<p>Let’s try adding a string to a floating point number.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;I like to eat &#39;</span> <span class="o">+</span> <span class="mf">3.14</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">2</span><span class="n">fff164c0979</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;I like to eat &#39;</span> <span class="o">+</span> <span class="mf">3.14</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;float&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, this raises and error as the there is no way that the Python kernel understands to concatenate a string and a floating point number.</p>
+<p>It is possible to multiply two strings?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Multiplication is &#39;</span> <span class="o">*</span> <span class="s1">&#39;multiple addition&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">0</span><span class="n">d995f65bc13</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;Multiplication is &#39;</span> <span class="o">*</span> <span class="s1">&#39;multiple addition&#39;</span>
+
+<span class="ne">TypeError</span>: can&#39;t multiply sequence by non-int of type &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>It would appear not, again we can understand this as there is no rational to the operation.</p>
+<p>However, it is possible to multiply a string by an integer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Around the world. &#39;</span> <span class="o">*</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Around the world. Around the world. Around the world. Around the world. Around the world. &#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is because multiplication is essentially multiple addition.
+So</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Around the world. &#39;</span> <span class="o">*</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>is equivalent to</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Around the world. &#39;</span> <span class="o">+</span> <span class="s1">&#39;Around the world. &#39;</span> <span class="o">+</span> <span class="s1">&#39;Around the world. &#39;</span> <span class="o">+</span> <span class="s1">&#39;Around the world. &#39;</span> <span class="o">+</span> <span class="s1">&#39;Around the world. &#39;</span>
+</pre></div>
+</div>
+<p>Finally, we will consider multiplication of a string by a float.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Around the world. &#39;</span> <span class="o">*</span> <span class="mf">8.314</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">5</span><span class="n">f68f15b5d3f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;Around the world. &#39;</span> <span class="o">*</span> <span class="mf">8.314</span>
+
+<span class="ne">TypeError</span>: can&#39;t multiply sequence by non-int of type &#39;float&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This gives an error as it is not rational to are 0.314 of a string object.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -322,8 +448,6 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../notebooks_introduction/exercises.html" title="previous page">Exercises</a>
-    <a class='right-next' id="next-link" href="why_we_encourage_typing_out_the_code_examples.html" title="next page">Why we encourage typing out the code examples</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
