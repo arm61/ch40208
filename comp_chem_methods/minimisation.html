@@ -342,13 +342,14 @@
 <h1>Function minimisation<a class="headerlink" href="#function-minimisation" title="Permalink to this headline">¶</a></h1>
 <p>The potential energy surface describes the energy as a function of the atomic configuration in space.
 In computational chemistry, frequently the aim is to study the minimum energy atomic configuration.
-Therefore, it is necessary that we are able to find the minimum of a given potential energy surface.</p>
-<p>In this section we will consider the simple case of a potential energy surface of two atoms interacting in space, in particular argon atoms.
-This is typically modelled with a Lennard-Jones potential, which aims to describe the long-range attractive London dispersion forces between the two atoms and the short range repulsive Pauli exclusion principle (that two atoms cannot occupy the same space).
-The functional form of the Lennard-Jones potential is as follows,
-$<span class="math notranslate nohighlight">\( E(r_{ij}) = \frac{A}{r_{ij}^{12}} - \frac{B}{r_{ij}^6}, \)</span><span class="math notranslate nohighlight">\(
-where \)</span>E(r_{ij})<span class="math notranslate nohighlight">\( is the potential energy, \)</span>r_{ij}<span class="math notranslate nohighlight">\( is the distance between atoms \)</span>i<span class="math notranslate nohighlight">\( and \)</span>j<span class="math notranslate nohighlight">\(, and \)</span>A<span class="math notranslate nohighlight">\( and \)</span>B$ are interaction specific constants.
-The first part of the above equation describe the repuslive interaction, while the second describes the attractive (remember that a negative energy contribution describes an attraction).
+Therefore, we must be able to find the minimum of a given potential energy surface.</p>
+<p>In this section, we will consider the simple case of a potential energy surface of two atoms interacting in space, in particular argon atoms.
+This is typically modelled with a Lennard-Jones potential, which aims to describe the long-range attractive London dispersion forces between the two atoms and the short-range repulsive Pauli exclusion principle (that two atoms cannot occupy the same space).
+The functional form of the Lennard-Jones potential is as follows,</p>
+<div class="math notranslate nohighlight">
+\[ E(r_{ij}) = \frac{A}{r_{ij}^{12}} - \frac{B}{r_{ij}^6}, \]</div>
+<p>where <span class="math notranslate nohighlight">\(E(r_{ij})\)</span> is the potential energy, <span class="math notranslate nohighlight">\(r_{ij}\)</span> is the distance between atoms <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, and <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are interaction specific constants.
+The first part of the above equation describes the repulsive interaction, while the second describes the attractive (remember that a negative energy contribution describes an attraction).
 We can plot a typical Lennard-Jones potential as shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -371,7 +372,7 @@ We can plot a typical Lennard-Jones potential as shown below.</p>
 </div>
 </div>
 <p>In the above plot, we can see where the energy is minimised, at around 4.1 Å.
-The aim of function minimisation is to enable a computational algorithm to find this also.
+Function minimisation aims to enable a computational algorithm to find this also.
 For this, we use minimisation algorithms, which typically use the local gradient and curvature to determine the shape of the function, such that any moves are downhill.
 Collectively, these algorithms are known as <em>gradient-descent</em> methods.</p>
 <div class="toctree-wrapper compound">

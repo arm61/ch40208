@@ -354,8 +354,8 @@
                 
   <div class="section" id="gradient-descent">
 <h1>Gradient descent<a class="headerlink" href="#gradient-descent" title="Permalink to this headline">¶</a></h1>
-<p>The first algorithm that we will investigate considers only the gradient of the function, and changes the reaction parameter based on this.
-Therefore it is necessary that we define two functions, one for the energy of the potential energy surface (the Lennard-Jones potential outlined earlier) and another for the gradient of the potential energy surface (this is the first derivative of the Lennard-Jones potential).
+<p>The first algorithm that we will investigate considers only the gradient of the function and changes the reaction parameter based on this.
+Therefore we must define two functions, one for the energy of the potential energy surface (the Lennard-Jones potential outlined earlier) and another for the gradient of the potential energy surface (this is the first derivative of the Lennard-Jones potential).
 The function for the gradient of the potential energy surface is given below.</p>
 <div class="math notranslate nohighlight">
 \[ E'(r_{ij}) = -12\frac{A}{r_{ij}^{13}} + 6\frac{B}{r_{ij}^7}, \]</div>
@@ -383,13 +383,15 @@ The function for the gradient of the potential energy surface is given below.</p
 </div>
 <p>When the gradient is positive, where <span class="math notranslate nohighlight">\(r_{ij} &gt; 4.1\)</span> Å, then we want to reduce the value of <span class="math notranslate nohighlight">\(r_{ij}\)</span>, such that we go downhill towards the minimum.
 Where the gradient is negative, <span class="math notranslate nohighlight">\(r_{ij} &lt; 4.1\)</span> Å, the value of <span class="math notranslate nohighlight">\(r_{ij}\)</span> needs to increase to move towards the minimum.
-This gives raise the the following algorithm,</p>
-<ol class="simple">
+This gives rise to the following algorithm,</p>
+<ol>
 <li><p>An initial guess of the minimum energy distance is made</p></li>
 <li><p>The first derivative of the energy at that distance is calculated</p></li>
-<li><p>The distance is updated based on the following relationship,
-$<span class="math notranslate nohighlight">\( r_{\text{new}} = r_{\text{old}} - \alpha E'(r_{\text{old}}), \)</span><span class="math notranslate nohighlight">\(
-where, \)</span>E’(r)<span class="math notranslate nohighlight">\( is the first derivative of the energy, \)</span>r_{\text{old}}<span class="math notranslate nohighlight">\( is the original distance, and \)</span>\alpha$ is a hyperparameter.</p></li>
+<li><p>The distance is updated based on the following relationship,</p>
+<div class="math notranslate nohighlight">
+\[ r_{\text{new}} = r_{\text{old}} - \alpha E'(r_{\text{old}}), \]</div>
+<p>where, <span class="math notranslate nohighlight">\(E'(r)\)</span> is the first derivative of the energy, <span class="math notranslate nohighlight">\(r_{\text{old}}\)</span> is the original distance, and <span class="math notranslate nohighlight">\(\alpha\)</span> is a hyperparameter.</p>
+</li>
 <li><p>Go to step 2.</p></li>
 </ol>
 <p>The hyperparameter, <span class="math notranslate nohighlight">\(\alpha\)</span>, is a variable that we need to find for our given optimisation, which scales the magnitude of the change in <span class="math notranslate nohighlight">\(r\)</span>.
