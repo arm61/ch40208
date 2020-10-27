@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Newton’s method" href="newtons.html" />
+    <link rel="prev" title="Function minimisation" href="minimisation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -222,11 +224,28 @@
   Computational Chemistry Methods
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="potential_energy_surfaces.html">
    Potential Energy Surfaces
   </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="minimisation.html">
+   Function minimisation
+  </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Gradient descent
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="newtons.html">
+     Newton’s method
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -339,7 +358,7 @@
 Therefore it is necessary that we define two functions, one for the energy of the potential energy surface (the Lennard-Jones potential outlined earlier) and another for the gradient of the potential energy surface (this is the first derivative of the Lennard-Jones potential).
 The function for the gradient of the potential energy surface is given below.</p>
 <div class="math notranslate nohighlight">
-\[ E' = -12\frac{A}{r^{13}} + 6\frac{B}{r^7}, \]</div>
+\[ E'(r_{ij}) = -12\frac{A}{r_{ij}^{13}} + 6\frac{B}{r_{ij}^7}, \]</div>
 <p>where the parameters are the same as outlined <span class="xref myst">previously</span>.</p>
 <p>Considering the shape of the potential energy surface,</p>
 <div class="cell docutils container">
@@ -413,6 +432,8 @@ Use <span class="math notranslate nohighlight">\(A\)</span> = <span class="math 
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="minimisation.html" title="previous page">Function minimisation</a>
+    <a class='right-next' id="next-link" href="newtons.html" title="next page">Newton’s method</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
