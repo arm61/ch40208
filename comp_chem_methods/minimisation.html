@@ -270,9 +270,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/comp_chem_methods/minimisation.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/comp_chem_methods/minimisation.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -290,6 +290,23 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/comp_chem_methods/minimisation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -304,6 +321,40 @@
                 
   <div class="section" id="function-minimisation">
 <h1>Function minimisation<a class="headerlink" href="#function-minimisation" title="Permalink to this headline">¶</a></h1>
+<p>The potential energy surface describes the energy as a function of the atomic configuration in space.
+In computational chemistry, frequently the aim is to study the minimum energy atomic configuration.
+Therefore, it is necessary that we are able to find the minimum of a given potential energy surface.</p>
+<p>In this section we will consider the simple case of a potential energy surface of two atoms interacting in space, in particular argon atoms.
+This is typically modelled with a Lennard-Jones potential, which aims to describe the long-range attractive London dispersion forces between the two atoms and the short range repulsive Pauli exclusion principle (that two atoms cannot occupy the same space).
+The functional form of the Lennard-Jones potential is as follows,
+$<span class="math notranslate nohighlight">\( E(r_{ij}) = \frac{A}{r_{ij}^{12}} - \frac{B}{r_{ij}^6}, \)</span><span class="math notranslate nohighlight">\(
+where \)</span>E(r_{ij})<span class="math notranslate nohighlight">\( is the potential energy, \)</span>r_{ij}<span class="math notranslate nohighlight">\( is the distance between atoms \)</span>i<span class="math notranslate nohighlight">\( and \)</span>j<span class="math notranslate nohighlight">\(, and \)</span>A<span class="math notranslate nohighlight">\( and \)</span>B$ are interaction specific constants.
+The first part of the above equation describe the repuslive interaction, while the second describes the attractive (remember that a negative energy contribution describes an attraction).
+We can plot a typical Lennard-Jones potential as shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="mf">1e5</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">40</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">A</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">**</span> <span class="mi">12</span><span class="p">)</span> <span class="o">-</span> <span class="n">B</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">**</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$r_</span><span class="si">{ij}</span><span class="s1">$/Å&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$E$/eV&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/minimisation_1_0.png" src="../_images/minimisation_1_0.png" />
+</div>
+</div>
+<p>In the above plot, we can see where the energy is minimised, at around 4.1 Å.
+The aim of function minimisation is to enable a computational algorithm to find this also.
+For this, we use minimisation algorithms, which typically use the local gradient and curvature to determine the shape of the function, such that any moves are downhill.
+Collectively, these algorithms are known as <em>gradient-descent</em> methods.</p>
 </div>
 
     <script type="text/x-thebe-config">
