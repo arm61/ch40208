@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Variables &#8212; CH40208: Topics in Computational Chemistry</title>
+    <title>Exercises &#8212; CH40208: Topics in Computational Chemistry</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,8 +57,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Arithmetic" href="arithmetic.html" />
-    <link rel="prev" title="Types" href="types.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -135,7 +133,7 @@
   Python
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="python_first_chemistry_later.html">
    Python first, chemistry later
@@ -166,8 +164,8 @@
    Types
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="variables.html">
    Variables
   </a>
  </li>
@@ -282,7 +280,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/python_basics/variables.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/python_basics/lists_exercises.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -307,7 +305,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/python_basics/variables.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/python_basics/lists_exercises.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -330,30 +328,13 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-a-variable">
-   What is a variable?
+  <a class="reference internal nav-link" href="#molecule-1">
+   Molecule 1
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assigning-a-variable">
-   Assigning a variable
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aside-f-strings">
-     Aside: f-strings
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-assignment">
-   Multiple assignment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#empty-variables">
-   Empty variables
+  <a class="reference internal nav-link" href="#molecule-2">
+   Molecule 2
   </a>
  </li>
 </ul>
@@ -367,161 +348,97 @@
         
               <div>
                 
-  <div class="section" id="variables">
-<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
-<p>Until now, all of the Python examples have used explicit data values typed directly into the <strong>code cells</strong>. This is okay for typing out a quick numerical calculation, but does not let us do anything any more sophisticated with our data. To do anything more complex your code will need to store and retrieve data, and to change the values of these data as you perform your calculations, which we do using <strong>variables</strong>.</p>
-<div class="section" id="what-is-a-variable">
-<h2>What is a variable?<a class="headerlink" href="#what-is-a-variable" title="Permalink to this headline">¶</a></h2>
-<p>A variable is a Python is an object that stores some data.</p>
-<p>This data can be a wide range of <strong>types</strong>, including <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, or <code class="docutils literal notranslate"><span class="pre">complex</span></code>; a <code class="docutils literal notranslate"><span class="pre">string</span></code>; a <code class="docutils literal notranslate"><span class="pre">bool</span></code>; even a function, or a <strong>collection</strong> of other variables.</p>
-</div>
-<div class="section" id="assigning-a-variable">
-<h2>Assigning a variable<a class="headerlink" href="#assigning-a-variable" title="Permalink to this headline">¶</a></h2>
-<p>To create a new variable and <strong>assign</strong> it a value we use <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
+  <div class="section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<p>Let’s first look at the halogens list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">days_in_october</span> <span class="o">=</span> <span class="mi">31</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">halogens</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;fluorine&#39;</span><span class="p">,</span> <span class="s1">&#39;chlorine&#39;</span><span class="p">,</span> <span class="s1">&#39;bromine&#39;</span><span class="p">,</span> <span class="s1">&#39;iodine&#39;</span><span class="p">,</span> <span class="s1">&#39;astatine&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>This creates a variable named <code class="docutils literal notranslate"><span class="pre">days_in_october</span></code> and assigns it the integer value <code class="docutils literal notranslate"><span class="pre">31</span></code>.</p>
-<p align="center">
-     <img src="https://github.com/pythoninchemistry/ch40208/raw/master/CH40208/python_basics/images/days_in_october.png" width="32%" alt="The assignment of the value 31 to the variable named days_in_october."/>
- </p>
-<p>The left-hand side of the assignment expression is the <strong>variable name</strong>.</p>
-<ul class="simple">
-<li><p>Variable name must start with a letter or an underscore.</p></li>
-<li><p>Variable names can be any length and can contain upper- and lower-case letters, numbers, and underscores.</p></li>
-<li><p>Variable names are <strong>case sensitive</strong>. <code class="docutils literal notranslate"><span class="pre">my_name</span></code> and <code class="docutils literal notranslate"><span class="pre">My_Name</span></code> are two different variables.</p></li>
-<li><p>Variable names cannot be special <strong>reserved keywords</strong>. You can see the full list of <strong>reserved keywords</strong> by running the command <code class="docutils literal notranslate"><span class="pre">help(&quot;keywords&quot;)</span></code> in a <strong>code cell</strong>.</p></li>
-</ul>
-<p>Now we can use the variable <code class="docutils literal notranslate"><span class="pre">days_in_october</span></code> in place of the integer <code class="docutils literal notranslate"><span class="pre">31</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are&quot;</span><span class="p">,</span> <span class="n">days_in_october</span><span class="p">,</span> <span class="s2">&quot;days in October&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">halogens</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 31 days in October
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;astatine&#39;, &#39;iodine&#39;, &#39;bromine&#39;, &#39;chlorine&#39;, &#39;fluorine&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="aside-f-strings">
-<h3>Aside: f-strings<a class="headerlink" href="#aside-f-strings" title="Permalink to this headline">¶</a></h3>
-<p>A neater way to do this is to use <strong>f-strings</strong>, which provide a way to embed expressions inside strings. An <strong>f-string</strong> is a <strong>string literal</strong> with an <code class="docutils literal notranslate"><span class="pre">f</span></code> character at the beginning, and curly brackets enclosing any expressions. When the <strong>f-string</strong> is created, any enclosed expressions are evaluated to give a single <strong>interpolated</strong> string:</p>
+<p>Using a negative number reverses the list.</p>
+<p>Now for the distance calculations.</p>
+<div class="section" id="molecule-1">
+<h2>Molecule 1<a class="headerlink" href="#molecule-1" title="Permalink to this headline">¶</a></h2>
+<p>First we will define the atom positions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">&quot;There are </span><span class="si">{</span><span class="n">days_in_october</span><span class="si">}</span><span class="s2"> days in October&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atom_1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">]</span>
+<span class="n">atom_2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">]</span>
+<span class="n">atom_3</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_12</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">atom_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">atom_1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">atom_1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_2</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">r_13</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">atom_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_3</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">atom_1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_3</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">atom_1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_3</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">r_23</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">atom_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_3</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">atom_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_3</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">atom_2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_3</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r_12</span><span class="p">,</span> <span class="n">r_13</span><span class="p">,</span> <span class="n">r_23</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;There are 31 days in October&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9486832980505141 1.5652475842498532 0.9433981132056602
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">days_in_october</span></code> can be used in any of the ways that we might use the value assigned to it. i.e. <code class="docutils literal notranslate"><span class="pre">days_in_october</span></code> behaves like an <strong>integer</strong>. If we call type with <code class="docutils literal notranslate"><span class="pre">days_in_october</span></code> we can confirm the assigned value is an <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>The distance between atoms 1 and 3 is less than half the distance between atoms 1 and 2 plus the distance between atoms 2 and 3.
+This indicates that the atoms are in a bent shape.</p>
+</div>
+<div class="section" id="molecule-2">
+<h2>Molecule 2<a class="headerlink" href="#molecule-2" title="Permalink to this headline">¶</a></h2>
+<p>Again, define the atom positions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">days_in_october</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atom_1</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]</span>
+<span class="n">atom_2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.6</span><span class="p">]</span>
+<span class="n">atom_3</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can reuse the code above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_12</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">atom_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">atom_1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">atom_1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_2</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">r_13</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">atom_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_3</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">atom_1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_3</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">atom_1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_3</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">r_23</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">atom_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_3</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">atom_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_3</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">atom_2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">atom_3</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r_12</span><span class="p">,</span> <span class="n">r_13</span><span class="p">,</span> <span class="n">r_23</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.140175425099138 2.280350850198276 1.140175425099138
 </pre></div>
 </div>
 </div>
 </div>
-<p>Variables can also appear on the right-hand side of variable assignments.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>In the first line, we create a variable <code class="docutils literal notranslate"><span class="pre">a</span></code> and assign it the value <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p></li>
-<li><p>In the second line, we create a variable <code class="docutils literal notranslate"><span class="pre">b</span></code> and assign it to the same value as the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>. This is the same as if we had written <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">3</span></code>.</p></li>
-<li><p>In the third line we print <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
-</ul>
-<p align="center">
-     <img src="https://github.com/pythoninchemistry/ch40208/raw/master/CH40208/python_basics/images/a_and_b.png" width="30%" alt="The assignment of 3 to the variable a and the assigment of this to b."/>
- </p>
-<p>Because <code class="docutils literal notranslate"><span class="pre">b</span></code> is assigned to the <strong>value</strong> stored in <code class="docutils literal notranslate"><span class="pre">a</span></code>, and not to <code class="docutils literal notranslate"><span class="pre">a</span></code> itself, if we <strong>reassign</strong> <code class="docutils literal notranslate"><span class="pre">a</span></code>, the value stored in <code class="docutils literal notranslate"><span class="pre">b</span></code> does not change.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 2
-b = 3
-</pre></div>
-</div>
-</div>
-</div>
-<p align="center">
-     <img src="https://github.com/pythoninchemistry/ch40208/raw/master/CH40208/python_basics/images/a_and_b_switch.png" width="50%" alt="The assignment of 3 to the variable a and the assigment of this to b, followed by the reassignment of a as 2."/>
- </p>
-</div>
-</div>
-<div class="section" id="multiple-assignment">
-<h2>Multiple assignment<a class="headerlink" href="#multiple-assignment" title="Permalink to this headline">¶</a></h2>
-<p>Python allows multiple variables to be assigned in the same statement:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">21</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21 21 21
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="empty-variables">
-<h2>Empty variables<a class="headerlink" href="#empty-variables" title="Permalink to this headline">¶</a></h2>
-<p>A variable may also be set to contain no value by assigning it <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">None</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
-</pre></div>
-</div>
-</div>
-</div>
+<p>Now that middle distance is the same as the sum of the other two.
+So the molecule is linearly shaped.</p>
 </div>
 </div>
 
@@ -553,8 +470,6 @@ b = 3
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="types.html" title="previous page">Types</a>
-    <a class='right-next' id="next-link" href="arithmetic.html" title="next page">Arithmetic</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
