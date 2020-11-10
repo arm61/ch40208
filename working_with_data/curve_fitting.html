@@ -395,7 +395,7 @@
 For example, considering the determination of the activation energy, <span class="math notranslate nohighlight">\(E_a\)</span>, of some reaction from an Arrhenius relationship,</p>
 <div class="math notranslate nohighlight">
 \[ k(T) = A \exp{\frac{-E_a}{RT}}, \]</div>
-<p>where <span class="math notranslate nohighlight">\(k(T)\)</span> is the rate constant at time <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(A\)</span> is the pre-exponential factor, <span class="math notranslate nohighlight">\(R\)</span> is the ideal gas constant and <span class="math notranslate nohighlight">\(T\)</span> is the temperature.
+<p>where, <span class="math notranslate nohighlight">\(k(T)\)</span> is the rate constant at time <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(A\)</span> is the pre-exponential factor, <span class="math notranslate nohighlight">\(R\)</span> is the ideal gas constant and <span class="math notranslate nohighlight">\(T\)</span> is the temperature.
 Typically when we are performing our analysis, we will rearrange the above equation to give a straight line,</p>
 <div class="math notranslate nohighlight">
 \[ \ln{k(T)} = \ln{A} - \frac{E_a}{RT}. \]</div>
@@ -504,19 +504,15 @@ The two parts that we are most interested in are the <code class="docutils liter
 <p>Therefore, we can evaluate the activation energy and the pre-exponential factor as follows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">activation_energy</span> <span class="o">=</span> <span class="o">-</span> <span class="n">R</span> <span class="o">*</span> <span class="n">result</span><span class="o">.</span><span class="n">slope</span>
-<span class="n">preexponential_factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">intercept</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">R</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">9</span><span class="n">dd18abac980</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">activation_energy</span> <span class="o">=</span> <span class="o">-</span> <span class="n">R</span> <span class="o">*</span> <span class="n">result</span><span class="o">.</span><span class="n">slope</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">preexponential_factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">intercept</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;R&#39; is not defined
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">activation_energy</span> <span class="o">=</span> <span class="o">-</span> <span class="n">R</span> <span class="o">*</span> <span class="n">result</span><span class="o">.</span><span class="n">slope</span>
+<span class="n">preexponential_factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">intercept</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -547,7 +543,7 @@ The two parts that we are most interested in are the <code class="docutils liter
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/curve_fitting_18_0.png" src="../_images/curve_fitting_18_0.png" />
+<img alt="../_images/curve_fitting_19_0.png" src="../_images/curve_fitting_19_0.png" />
 </div>
 </div>
 </div>
@@ -559,7 +555,7 @@ This can also be achieved with Python by minimising the difference between our m
 The value that we will minimize is known as the <span class="math notranslate nohighlight">\(\chi^2\)</span>-value, which has the following definitions.</p>
 <div class="math notranslate nohighlight">
 \[ \chi^2 = \sum\big\{[y - f(x)] ^ 2\big\} \;\;\;\text{or}\;\;\; \chi^2 = \sum\Bigg\{\frac{[y - f(x)] ^ 2}{y_{\text{err}}^2}\Bigg\},\]</div>
-<p>depending on whether or not an uncertainty in the data is known.</p>
+<p>depending on whether or not uncertainty in the data is known.</p>
 <p>Consider the following data, which describe the decomposition of hyodrgen peroxide in the presence of excess cerous ion Ce<sup>III</sup>,</p>
 <p>2H<sub>2</sub>O<sub>2</sub> + 2Ce<sup>III</sup> → 2H<sub>2</sub>O + Ce<sup>IV</sup> + O<sub>2</sub>.</p>
 <table class="colwidths-auto table">
@@ -611,10 +607,10 @@ The value that we will minimize is known as the <span class="math notranslate no
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/curve_fitting_21_0.png" src="../_images/curve_fitting_21_0.png" />
+<img alt="../_images/curve_fitting_22_0.png" src="../_images/curve_fitting_22_0.png" />
 </div>
 </div>
-<p>This reaction has a first order rate equation, this will be our “model” that will we will compare to the data, where the <span class="math notranslate nohighlight">\([A]_0\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are the varying parameters.
+<p>This reaction has a first-order rate equation, this will be our “model” that we will compare to the data, where the <span class="math notranslate nohighlight">\([A]_0\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are the varying parameters.
 This function is defined below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -680,10 +676,10 @@ We can use the <code class="docutils literal notranslate"><span class="pre">scip
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      fun: 0.13373044840242304
- hess_inv: array([[7.88766485e-01, 1.26315647e-02],
-       [1.26315647e-02, 3.02236789e-04]])
-      jac: array([1.41561031e-07, 2.03773379e-06])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      fun: 0.13373044840241782
+ hess_inv: array([[7.88770542e-01, 1.26315485e-02],
+       [1.26315485e-02, 3.02235136e-04]])
+      jac: array([1.58324838e-07, 2.03028321e-06])
   message: &#39;Optimization terminated successfully.&#39;
      nfev: 63
       nit: 10
@@ -708,7 +704,7 @@ We can use the <code class="docutils literal notranslate"><span class="pre">scip
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/curve_fitting_30_0.png" src="../_images/curve_fitting_30_0.png" />
+<img alt="../_images/curve_fitting_31_0.png" src="../_images/curve_fitting_31_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -718,12 +714,12 @@ We can use the <code class="docutils literal notranslate"><span class="pre">scip
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[A]_0 = 7.421644139156653; k = 0.10308255571543631
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[A]_0 = 7.421644144148406; k = 0.10308255579543868
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code> offers a convinent wrapper around this methodology, and makes it easy to access the estimated parameter uncertainties.</p>
+<p><code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code> offers a convenient wrapper around this methodology, and makes it easy to access the estimated parameter uncertainties.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
@@ -738,8 +734,8 @@ We can use the <code class="docutils literal notranslate"><span class="pre">scip
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-115-ef183409b30e&gt;:13: RuntimeWarning: overflow encountered in exp
-  return a0 * np.exp(-k * t)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ipykernel_launcher.py:13: RuntimeWarning: overflow encountered in exp
+  del sys.path[0]
 </pre></div>
 </div>
 </div>
@@ -764,7 +760,7 @@ However, the <code class="docutils literal notranslate"><span class="pre">curve_
 <div class="section" id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>Modify the above first-order rate fitting to consider a <em>y</em>-uncertainty of 5 %.</p></li>
+<li><p>Modify the above first-order rate fitting using the <code class="docutils literal notranslate"><span class="pre">minimize</span></code> method to consider a <em>y</em>-uncertainty of 5 %.</p></li>
 <li><p>By investigating the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html">documentation for the <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code></a>, determine how this uncertainty would be included in the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> method.</p></li>
 </ol>
 </div>
