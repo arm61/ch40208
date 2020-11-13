@@ -412,7 +412,7 @@ Typically when we are performing our analysis, we will rearrange the above equat
 <div class="math notranslate nohighlight">
 \[ \ln{k(T)} = \ln{A} - \frac{E_a}{RT}. \]</div>
 <p>Let’s looks at some experimental data for the decomposition of 2 moles of NO<sub>2</sub> to 2 moles of NO and one mole of O<sub>2</sub>.
-The data for this is available <a class="reference external" href="https://pythoninchemistry.org/ch40208/working_with_data/no2_decomposition.txt">in this file</a>.</p>
+The data for this is available <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch40208/master/CH40208/working_with_data/arrhenius.txt">in this file</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -688,10 +688,10 @@ We can use the <code class="docutils literal notranslate"><span class="pre">scip
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      fun: 0.13373044840242107
- hess_inv: array([[7.88767889e-01, 1.26315543e-02],
-       [1.26315543e-02, 3.02236037e-04]])
-      jac: array([1.45286322e-07, 2.03587115e-06])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      fun: 0.13373044840241782
+ hess_inv: array([[7.88770542e-01, 1.26315485e-02],
+       [1.26315485e-02, 3.02235136e-04]])
+      jac: array([1.58324838e-07, 2.03028321e-06])
   message: &#39;Optimization terminated successfully.&#39;
      nfev: 63
       nit: 10
@@ -726,7 +726,7 @@ We can use the <code class="docutils literal notranslate"><span class="pre">scip
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[A]_0 = 7.421644140842236; k = 0.10308255574195259
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[A]_0 = 7.421644144148406; k = 0.10308255579543868
 </pre></div>
 </div>
 </div>
