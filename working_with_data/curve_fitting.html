@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Potential Energy Surfaces" href="../comp_chem_methods/potential_energy_surfaces.html" />
+    <link rel="prev" title="File I/O" href="file_io.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -187,8 +189,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../python_basics/logic.html">
-   Logical operations
+  <a class="reference internal" href="../python_basics/logic_and_flow_control.html">
+   Logical Operations and Flow Control
   </a>
  </li>
 </ul>
@@ -219,7 +221,7 @@
   Working with Data
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="numpy_arrays.html">
    NumPy
@@ -240,6 +242,11 @@
    File I/O
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Curve fitting
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -250,6 +257,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../comp_chem_methods/potential_energy_surfaces.html">
    Potential Energy Surfaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../comp_chem_methods/geometry_optimisation.html">
+   Geometry Optimisation
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
@@ -676,10 +688,10 @@ We can use the <code class="docutils literal notranslate"><span class="pre">scip
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      fun: 0.13373044840242107
- hess_inv: array([[7.88767889e-01, 1.26315543e-02],
-       [1.26315543e-02, 3.02236037e-04]])
-      jac: array([1.45286322e-07, 2.03587115e-06])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      fun: 0.13373044840241782
+ hess_inv: array([[7.88770542e-01, 1.26315485e-02],
+       [1.26315485e-02, 3.02235136e-04]])
+      jac: array([1.58324838e-07, 2.03028321e-06])
   message: &#39;Optimization terminated successfully.&#39;
      nfev: 63
       nit: 10
@@ -714,7 +726,7 @@ We can use the <code class="docutils literal notranslate"><span class="pre">scip
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[A]_0 = 7.421644140842236; k = 0.10308255574195259
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[A]_0 = 7.421644144148406; k = 0.10308255579543868
 </pre></div>
 </div>
 </div>
@@ -794,6 +806,8 @@ However, the <code class="docutils literal notranslate"><span class="pre">curve_
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="file_io.html" title="previous page">File I/O</a>
+    <a class='right-next' id="next-link" href="../comp_chem_methods/potential_energy_surfaces.html" title="next page">Potential Energy Surfaces</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

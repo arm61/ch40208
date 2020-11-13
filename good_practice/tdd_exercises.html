@@ -187,8 +187,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../python_basics/logic.html">
-   Logical operations
+  <a class="reference internal" href="../python_basics/logic_and_flow_control.html">
+   Logical Operations and Flow Control
   </a>
  </li>
 </ul>
@@ -240,6 +240,11 @@
    File I/O
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../working_with_data/curve_fitting.html">
+   Curve fitting
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -250,6 +255,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../comp_chem_methods/potential_energy_surfaces.html">
    Potential Energy Surfaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../comp_chem_methods/geometry_optimisation.html">
+   Geometry Optimisation
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
@@ -385,7 +395,8 @@
   <div class="section" id="exercise">
 <h1>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h1>
 <p>The idea for this exercise is to copy and paste the tests and the function definitions into your own Notebook.
-Once the function that your write satifies the test, only <code class="docutils literal notranslate"><span class="pre">'Test</span> <span class="pre">X</span> <span class="pre">for</span> <span class="pre">Problem</span> <span class="pre">Y</span> <span class="pre">Passed!'</span></code> will be printed when the cell is run.</p>
+Once the function that your write satifies the test, only <code class="docutils literal notranslate"><span class="pre">'Test</span> <span class="pre">X</span> <span class="pre">for</span> <span class="pre">Problem</span> <span class="pre">Y</span> <span class="pre">Passed!'</span></code> will be printed when the cell is run.
+Unless otherwise stated, all values are in SI units.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
@@ -401,7 +412,7 @@ Once the function that your write satifies the test, only <code class="docutils 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test 1 for Problem 1 Passed!&#39;</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">energy</span><span class="p">(</span><span class="mf">755117497.6671815</span><span class="p">),</span> <span class="mf">1.5e-16</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test 2 for Problem 1 Passed!&#39;</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">energy</span><span class="p">(</span><span class="mf">5.663381232503861e+28</span><span class="p">),</span> <span class="mf">1.125e4</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">energy</span><span class="p">(</span><span class="mf">5.663381232503861e+28</span><span class="p">),</span> <span class="mf">11250.000186762287</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test 3 for Problem 1 Passed!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -417,7 +428,7 @@ Once the function that your write satifies the test, only <code class="docutils 
 <span class="k">def</span> <span class="nf">ideal_gas_law</span><span class="p">(</span><span class="n">number_of_moles</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">pressure</span><span class="p">):</span>
     <span class="k">return</span>
 
-<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">ideal_gas_law</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">101325</span><span class="p">),</span> <span class="mf">0.82057338</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">ideal_gas_law</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">101325</span><span class="p">),</span> <span class="mf">0.82057367</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test 1 for Problem 2 Passed!&#39;</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">ideal_gas_law</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">10132500</span><span class="p">),</span> <span class="mf">4.10286691e-04</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test 2 for Problem 2 Passed!&#39;</span><span class="p">)</span>
@@ -448,17 +459,17 @@ Once the function that your write satifies the test, only <code class="docutils 
 </div>
 <div class="section" id="problem-4">
 <h2>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">¶</a></h2>
-<p>This function should return the rate constants <span class="math notranslate nohighlight">\(k\)</span> for a reaction with a given activation energy <span class="math notranslate nohighlight">\(E_a\)</span> and pre-exponential factor <span class="math notranslate nohighlight">\(A\)</span>, and at a range of temperatures <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>This function should return the rate constants <span class="math notranslate nohighlight">\(k\)</span> for a reaction with a given activation energy <span class="math notranslate nohighlight">\(E_a\)</span> (in joules) and pre-exponential factor <span class="math notranslate nohighlight">\(A\)</span>, and at a range of temperatures <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <p>Remember,</p>
 <div class="math notranslate nohighlight">
 \[ k = A \exp{\frac{-E_a}{RT}} \]</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">arrhenius_equation</span><span class="p">(</span><span class="n">pre_exponential_factor</span><span class="p">,</span> <span class="n">activation_energy</span><span class="p">,</span> <span class="n">temperature</span><span class="p">):</span>
-    <span class="k">return</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">arrhenius_equation</span><span class="p">(</span><span class="mf">23e10</span><span class="p">,</span> <span class="mi">24131</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="mf">14461992.1514407</span><span class="p">)</span>
+    <span class="k">return</span> 
+    
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">arrhenius_equation</span><span class="p">(</span><span class="mf">23e10</span><span class="p">,</span> <span class="mf">24.131</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="mf">227785637794.47137</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test 1 for Problem 4 Passed!&#39;</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">arrhenius_equation</span><span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">226</span><span class="p">])),</span> 
-                               <span class="p">[</span><span class="mf">23.73241504</span><span class="p">,</span> <span class="mf">27.68905521</span><span class="p">,</span> <span class="mf">28.8460781</span><span class="p">])</span>
+                               <span class="p">[</span><span class="mf">23.7324167</span><span class="p">,</span> <span class="mf">27.6890556</span><span class="p">,</span> <span class="mf">28.8460781</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test 2 for Problem 4 Passed!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
