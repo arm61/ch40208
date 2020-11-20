@@ -9,7 +9,7 @@ Therefore, we will use a stochastic method to more completely probe these uncert
 
 For this problem, we are going to look at the investigation of a mixture of organic species by IR spectroscopy. 
 We have been given [this data set](https://raw.githubusercontent.com/pythoninchemistry/ch40208/master/CH40208/working_with_data/mixture.csv), and are told it contains a mixture of toluene and benzyl alcohol. 
-> Use the `!head` command to investigate the experimental data file and plot the data using the [`plt.errorbar`](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.axes.Axes.errorbar.html) function. 
+> [Use the `!head` command](https://pythoninchemistry.org/ch40208/working_with_data/file_io.html#csv-files) to investigate the experimental data file and plot the data using the [`plt.errorbar`](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.axes.Axes.errorbar.html) function. 
 
 ## Our model
 
@@ -91,4 +91,4 @@ The algorithm for a typical MCMC sampling process is as follows:
 > Write a function to perform the MCMC algorithm outlined above, this should take a number of iterations (this should be no more than 2000) and step size as arguments and return the list of accepted values. 
 > Plot a histogram of the accepted values (using `plt.hist`), these should be normally distributed (you may need to google to see what this looks like).
 > Vary the step size between 1 and 0.001 to get the most normally distributed data you can. 
-> Using the statistical function in NumPy, calculate the mean and standard deviation of this distribution. 
+> Using the statistical functions in NumPy, calculate the mean and standard deviation of this distribution. 

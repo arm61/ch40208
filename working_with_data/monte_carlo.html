@@ -47,7 +47,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"bvec": ["\\mathbf{#1}", 1], "cvec": ["\\begin{bmatrix}#1\\\\#2\\end{bmatrix}", 2], "norm": ["\\left\\lVert #1\\right\\rVert", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Potential Energy Surfaces" href="../comp_chem_methods/potential_energy_surfaces.html" />
+    <link rel="prev" title="Model fitting" href="curve_fitting.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -219,7 +221,7 @@
   Working with Data
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="numpy_arrays.html">
    NumPy
@@ -243,6 +245,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="curve_fitting.html">
    Model fitting
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercise: Monte Carlo
   </a>
  </li>
 </ul>
@@ -397,7 +404,7 @@ Therefore, we will use a stochastic method to more completely probe these uncert
 <p>For this problem, we are going to look at the investigation of a mixture of organic species by IR spectroscopy.
 We have been given <a class="reference external" href="https://raw.githubusercontent.com/pythoninchemistry/ch40208/master/CH40208/working_with_data/mixture.csv">this data set</a>, and are told it contains a mixture of toluene and benzyl alcohol.</p>
 <blockquote>
-<div><p>Use the <code class="docutils literal notranslate"><span class="pre">!head</span></code> command to investigate the experimental data file and plot the data using the <a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.axes.Axes.errorbar.html"><code class="docutils literal notranslate"><span class="pre">plt.errorbar</span></code></a> function.</p>
+<div><p><a class="reference external" href="https://pythoninchemistry.org/ch40208/working_with_data/file_io.html#csv-files">Use the <code class="docutils literal notranslate"><span class="pre">!head</span></code> command</a> to investigate the experimental data file and plot the data using the <a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.axes.Axes.errorbar.html"><code class="docutils literal notranslate"><span class="pre">plt.errorbar</span></code></a> function.</p>
 </div></blockquote>
 <div class="section" id="our-model">
 <h2>Our model<a class="headerlink" href="#our-model" title="Permalink to this headline">¶</a></h2>
@@ -482,7 +489,7 @@ The result of this is that the values of our Markov chain that are accepted will
 <div><p>Write a function to perform the MCMC algorithm outlined above, this should take a number of iterations (this should be no more than 2000) and step size as arguments and return the list of accepted values.
 Plot a histogram of the accepted values (using <code class="docutils literal notranslate"><span class="pre">plt.hist</span></code>), these should be normally distributed (you may need to google to see what this looks like).
 Vary the step size between 1 and 0.001 to get the most normally distributed data you can.
-Using the statistical function in NumPy, calculate the mean and standard deviation of this distribution.</p>
+Using the statistical functions in NumPy, calculate the mean and standard deviation of this distribution.</p>
 </div></blockquote>
 </div>
 </div>
@@ -515,6 +522,8 @@ Using the statistical function in NumPy, calculate the mean and standard deviati
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="curve_fitting.html" title="previous page">Model fitting</a>
+    <a class='right-next' id="next-link" href="../comp_chem_methods/potential_energy_surfaces.html" title="next page">Potential Energy Surfaces</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
