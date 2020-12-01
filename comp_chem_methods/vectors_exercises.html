@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Working with vectors in Python &#8212; CH40208: Topics in Computational Chemistry</title>
+    <title>Exercise &#8212; CH40208: Topics in Computational Chemistry</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,8 +57,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Matrices" href="matrices.html" />
-    <link rel="prev" title="Vectors" href="vectors.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -258,7 +256,7 @@
   Computational Chemistry Methods
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="potential_energy_surfaces.html">
    Potential Energy Surfaces
@@ -293,18 +291,18 @@
    Minimization Libraries
   </a>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="vectors_and_matrices.html">
    Working with vectors and matrices
   </a>
-  <ul class="current collapse-ul">
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="vectors.html">
      Vectors
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors_in_python.html">
      Working with vectors in Python
     </a>
    </li>
@@ -362,7 +360,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/comp_chem_methods/vectors_in_python.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/comp_chem_methods/vectors_exercises.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -387,7 +385,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/comp_chem_methods/vectors_in_python.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/comp_chem_methods/vectors_exercises.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -404,20 +402,6 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
-</ul>
-
-        </nav>
-        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -425,156 +409,46 @@
         
               <div>
                 
-  <div class="section" id="working-with-vectors-in-python">
-<h1>Working with vectors in Python<a class="headerlink" href="#working-with-vectors-in-python" title="Permalink to this headline">¶</a></h1>
-<p>Working with vectors in Python is made simple by using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays.</p>
+  <div class="section" id="exercise">
+<h1>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h1>
+<p>Considering the atoms in the previous exercises.
+We can use a vector approach as follows.
+This is discussed in detail in LOIL 10.1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atom_1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">]</span>
+<span class="n">atom_2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">]</span>
+<span class="n">atom_3</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="c1"># define two 2D vectors using numpy arrays</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">atoms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">atom_1</span><span class="p">,</span> <span class="n">atom_2</span><span class="p">,</span> <span class="n">atom_3</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a_i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">atoms</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">a_j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:]):</span>
+        <span class="n">vector</span> <span class="o">=</span> <span class="n">a_i</span> <span class="o">-</span> <span class="n">a_j</span>
+        <span class="n">distances</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">vector</span><span class="p">)))</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.9486832980505142, 1.565247584249853, 0.9433981132056602]
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 4]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># vector addition</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7 5]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># vector subtraction</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 3 -3]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Remember that multiplication of <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays involves element-wise multiplication and returns a new array.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># vector multiplication?</span>
-<span class="n">e</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10  4]
-</pre></div>
-</div>
-</div>
-</div>
-<p>This is not the same as <span class="math notranslate nohighlight">\(\mathbf{a}\cdot\mathbf{b}\)</span> (dot product) <strong>or</strong> <span class="math notranslate nohighlight">\(\mathbf{a}\times\mathbf{b}\)</span> (cross product).
-Instead we can use the <code class="docutils literal notranslate"><span class="pre">numpy.dot()</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy.cross()</span></code> functions to compute the dot product and cross product of <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> respectively:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dot product</span>
-<span class="n">dot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dot</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cross product</span>
-<span class="n">cross</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cross</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
-</pre></div>
-</div>
-</div>
-</div>
-<p>You might have noticed that the dot product is equal to the <strong>sum</strong> of <code class="docutils literal notranslate"><span class="pre">a*b</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10  4]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
-</pre></div>
-</div>
-</div>
-</div>
-<p>Which should make sense from the definition of the cross product.</p>
-<div class="section" id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
-<p>You previously wrote some code to calculate the interatomic distances (and angles) between pairs of atoms in two molecules, using the expression</p>
-<div class="math notranslate nohighlight">
-\[r_{ij} = \sqrt{(x_i-x_j)^2 + (y_i-y_j)^2 + (z_i-z_j)^2}\]</div>
-<p>Starting from your previous code, or from scratch, write a new version of this code that solves the same problem using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays and <code class="docutils literal notranslate"><span class="pre">np.dot()</span></code>.</p>
-<p><a class="reference external" href="https://pythoninchemistry.org/ch40208/comp_chem_methods/vectors_exercises.html">Worked Example</a></p>
 </div>
 </div>
 
@@ -606,8 +480,6 @@ Instead we can use the <code class="docutils literal notranslate"><span class="p
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="vectors.html" title="previous page">Vectors</a>
-    <a class='right-next' id="next-link" href="matrices.html" title="next page">Matrices</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
